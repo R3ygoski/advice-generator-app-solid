@@ -1,0 +1,50 @@
+@use './mixins' as mx;
+@use './var' as v;
+
+// Card Movement
+// Keyframes at Mixins
+.card-change-top {
+    @include mx.animation('t')
+}
+.card-change-right {
+    @include mx.animation('r')
+}
+.card-change-bottom {
+    @include mx.animation('b')
+}
+.card-change-left {
+    @include mx.animation('l')
+}
+.card-change-top-right {
+    @include mx.animation('tr')
+}
+.card-change-bottom-right {
+    @include mx.animation('br')
+}
+.card-change-bottom-left {
+    @include mx.animation('bl')
+}
+.card-change-top-left {
+    @include mx.animation('tl')
+}
+
+// Dice and Button Animation
+@keyframes glow-resize {
+    0% {
+        filter: drop-shadow(0 0 5px v.$neon-green);
+    }
+    50% {
+        filter: drop-shadow(0 0 8px v.$neon-green);
+    }
+    100% {
+        filter: drop-shadow(0 0 5px v.$neon-green);
+    }
+}
+@keyframes spin-dice {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

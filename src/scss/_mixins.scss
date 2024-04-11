@@ -1,0 +1,77 @@
+$cubic-brezier: cubic-bezier(0.43,0.13,0.42,1.22);
+@keyframes change-advice-top {
+    from {
+        transform: translate(0, -100vh);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-right {
+    from {
+        transform: translate(100vw);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-bottom {
+    from {
+        transform: translate(0, 100vh);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-left {
+    from {
+        transform: translate(-100vw);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-top-right {
+    from {
+        transform: translate(100vw, -100vh);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-bottom-right {
+    from {
+        transform: translate(-100vw, -100vh);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-bottom-left {
+    from {
+        transform: translate(100vw, 100vh);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+@keyframes change-advice-top-left {
+    from {
+        transform: translate(-100vw,100vh);
+        filter: blur(1rem);
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+
+@mixin animation($dir){
+    @if($dir == 't'){
+        animation: change-advice-top 2s $cubic-brezier forwards;
+    } @else if ($dir == 'r'){
+        animation: change-advice-right 2s $cubic-brezier forwards;
+    } @else if ($dir == 'b'){
+        animation: change-advice-bottom 2s $cubic-brezier forwards;
+    } @else if ($dir == 'l'){
+        animation: change-advice-left 2s $cubic-brezier forwards;
+    } @else if ($dir == 'tr'){
+        animation: change-advice-top-right 2s $cubic-brezier forwards;
+    } @else if ($dir == 'br'){
+        animation: change-advice-bottom-right 2s $cubic-brezier forwards;
+    } @else if ($dir == 'bl'){
+        animation: change-advice-bottom-left 2s $cubic-brezier forwards;
+    } @else if ($dir == 'tl'){
+        animation: change-advice-top-left 2s $cubic-brezier forwards;
+    }
+}
